@@ -17,7 +17,10 @@ public class TTSService implements Service {
 	@Override
 	public void init() {
 		// TODO persist default
-		engine = VoxBridge.build(VoxBridge.PRIMARY_SERVER_PORT);
+		engine = VoxBridge.build();
+		// TODO default core in case of missing engine
+		if (engine == null)
+			throw new IllegalStateException("No engine available.");
 	}
 
 	/**
@@ -45,6 +48,7 @@ public class TTSService implements Service {
 
 	@Override
 	public void shutdown() {
+		this.engine.shutdown();
 		engine = null;
 	}
 

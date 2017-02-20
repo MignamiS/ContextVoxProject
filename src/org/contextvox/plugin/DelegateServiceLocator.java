@@ -17,4 +17,8 @@ class DelegateServiceLocator implements ServiceLocator {
 		return this.tts;
 	}
 
+	public void shutdownAll() {
+		this.tts.shutdown();
+	}
+
 }

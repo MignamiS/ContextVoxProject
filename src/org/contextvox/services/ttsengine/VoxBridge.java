@@ -1,7 +1,9 @@
 package org.contextvox.services.ttsengine;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.contextvox.plugin.MessageSource;
@@ -45,28 +47,37 @@ public class VoxBridge implements TTSEngine {
 	}
 
 	/**
-	 * Factory method, builds a new core.
+	 * Factory method, builds a new engine. Tries to connect firstly on the
+	 * primary server port: if it fails, tries the fallback port.
 	 *
-	 * @param port
-	 *            the specific server port
-	 *
-	 * @return the core or <code>null</code> if something goes wrong, for
-	 *         example when the port is already use
+	 * @return return the engine or null if both primary and fallback ports are
+	 *         in use, or a generic socket error happens
 	 */
-	public static TTSEngine build(final int port) {
+	public static TTSEngine build() {
 		logger.info("VoxBridge setup procedure started");
 		// init server
-		final SocketBridge bridge = SocketBridge.getNewServer(port);
+		SocketBridge bridge = null;
+		try {
+			bridge = SocketBridge.getNewServer(PRIMARY_SERVER_PORT);
+		} catch (final IOException e) {
+			final String msg = "Error connecting server on port " + PRIMARY_SERVER_PORT + "(primary)";
+			logger.log(Level.WARNING, msg, e);
+			try {
+				bridge = SocketBridge.getNewServer(SECONDARY_SERVER_PORT);
+			} catch (final IOException e1) {
+				final String msg2 = "Error connecting on fallback port (" + SECONDARY_SERVER_PORT + ")";
+				logger.log(Level.SEVERE, msg2, e1);
+				return null;
+			}
+		}
 
 		if (bridge != null) {
 			// server has been instantiated correctly
 			logger.info("VoxBridge setup successful");
 			return new VoxBridge(bridge);
-		} else {
-			// TODO instead of returning null, throw a custom exception.
-			// something goes wrong during the server setup
-			return null;
 		}
+
+		return null;
 	}
 
 	public static MessageSource getLastState() {

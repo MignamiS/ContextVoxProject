@@ -56,4 +56,8 @@ public class ContextVox implements Runnable, ServiceLocator {
 		return this.services.getTTSService();
 	}
 
+	public void shutdown() {
+		this.services.shutdownAll();
+	}
+
 }

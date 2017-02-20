@@ -48,37 +48,13 @@ class SocketBridge {
 	 * @return SocketBridge or NULL if something goes wrong during the
 	 *         connection setup, for example if the server port is already
 	 *         bound.
+	 * @throws IOException
 	 */
-	public static SocketBridge getNewServer(final int port) {
-		logger.info("Setup socket bridge on port " + port);
+	public static SocketBridge getNewServer(final int port) throws IOException {
 		final String serverName = String.format("Server[%d]:", port);
-
-		// building server
 		ServerSocket server = null;
-		try {
-			server = new ServerSocket();
-		} catch (final IOException e1) {
-			logger.log(Level.SEVERE, serverName + "error when opening the socket", e1);
-			return null;
-		}
-
-		// attempt to bind the address
-		logger.fine("Try to bind address...");
-		try {
-			server.bind(new InetSocketAddress(port));
-		} catch (final IOException e) {
-			// the address is in use
-			final String msg = String.format("%s the port %d is already in use", serverName, port);
-			logger.warning(msg);
-			// cleanup resources
-			if (server != null && !server.isClosed())
-				try {
-					server.close();
-				} catch (final IOException e1) {
-					logger.log(Level.SEVERE, serverName + "Error when closing the broken server socket", e);
-				}
-			return null;
-		}
+		server = new ServerSocket();
+		server.bind(new InetSocketAddress(port));
 		logger.info(String.format("%s listening on address 127.0.0.1:%d", serverName, port));
 
 		// accept timeout
@@ -87,14 +63,13 @@ class SocketBridge {
 			server.setSoTimeout(WAIT_TIMEOUT_SECS * 1000);
 		} catch (final SocketException e) {
 			logger.log(Level.SEVERE, serverName + "Error when setting the server accepter timeout", e);
+			server.close();
+			throw e;
 		}
 
 		final SocketBridge socketBridge = new SocketBridge(server);
-
 		if (socketBridge != null)
-			logger.fine("Initializing socket bridge...");
-		socketBridge.init();
-
+			socketBridge.init();
 		return socketBridge;
 	}
 
@@ -214,8 +189,7 @@ class SocketBridge {
 		if (wr != null) {
 			message = message.trim();
 			message = command.get(message);
-			// wr.println(message);
-			wr.print(message);
+			wr.println(message); // double EOL is necessary...
 		}
 	}
 

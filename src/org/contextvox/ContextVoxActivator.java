@@ -11,6 +11,8 @@ import org.contextvox.plugin.VoxRequest;
 import org.contextvox.utils.FeedbackFilter;
 import org.contextvox.utils.VoxLogFormatter;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchListener;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -88,6 +90,7 @@ public class ContextVoxActivator extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		instance = new ContextVox(queue);
+		plugin.getWorkbench().addWorkbenchListener(new WBListener());
 
 		// logger
 		// TODO preferences setup
@@ -112,5 +115,22 @@ public class ContextVoxActivator extends AbstractUIPlugin {
 		plugin = null;
 		instance = null;
 		super.stop(context);
+	}
+
+	/**
+	 * The activator class controls the plug-in life cycle
+	 */
+	class WBListener implements IWorkbenchListener {
+
+		@Override
+		public boolean preShutdown(final IWorkbench workbench, final boolean forced) {
+			return true;
+		}
+
+		@Override
+		public void postShutdown(final IWorkbench workbench) {
+			instance.shutdown();
+		}
+
 	}
 }

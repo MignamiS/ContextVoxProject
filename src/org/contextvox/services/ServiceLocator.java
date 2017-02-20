@@ -1,5 +1,7 @@
 package org.contextvox.services;
 
+import org.contextvox.services.ttsengine.TTSService;
+
 /**
  * Manages services and provides them to clients. If not specified, the service
  * reference is always valid and can be stored in a variable; that means that
@@ -10,11 +12,12 @@ package org.contextvox.services;
  * @author Simone Mignami
  *
  */
-public interface ServiceHandler {
+public interface ServiceLocator {
+
+	public TTSService getTTSService();
 
 	// TODO implement
 	// public ReplacerService getReplacerService();
 	// public TextualContextService getTextualContext();
-	// public TTSService getTTSService();
 
 }

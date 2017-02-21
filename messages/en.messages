@@ -1,0 +1,326 @@
+# Java messages translation - ENGLISH
+#
+# Remember encoding UTF-8
+#
+
+#################
+# Operators
+#################
+=	op	becomes
++	op	plus
+-	op	minus
+*	op	moltiply
+/	op	divide
+"	op	double quote
+'	op	single quote
+!	op	not
+++	op	increment
+--	op	decrement
+==	op	equal
++=	op	add
+-=	op	subtract
+*=	op	moltiply equal
+/=	op	divide equal
+!=	op	not equals
+<	op	less
+>	op	greater
+<=	op	less than or equal to
+>=	op	greater than or equal to
+%	op	percent
+<>	op	diamond
+&&	op	and
+||	op	or
+~	op	complement
+<<	op	signed left shift
+>>	op	signed right shift
+>>>	op	unsigned right shift
+<<<	op	unsigned left shift
+&	op	bitwise and
+|	op	bitwise inclusive or
+^	op	bitwise exclusive or
+->	op	arrow
+//	op	comment
+[]	op	array
+instanceof	op	instance of
+/*	op	begin block comment
+*/	op	end block comment
+/**	op	begin javadoc comment
+
+
+# SPECIAL, in this form otherwise are processed as separators
+TAB	sp	tab
+SPC	sp	space
+EOL	sp	end of line
+
+
+#################
+# Parenthesis
+#################
+[	pa	opened bracket
+]	pa	closed bracket
+(	pa	opened parenthesis
+)	pa	closed parenthesis
+{	pa	opened brace
+}	pa	closed brace
+()	pa	open close parenthesis 
+
+#################
+# Points
+#################
+.	po	dot
+,	po	comma
+?	po	question mark
+;	po	semicolon
+:	po	colon
+
+
+#################
+# Keyword
+#################
+interface	ke	interface
+abstract	ke	abstract
+implements	ke	implements
+import	ke	import
+extends	ke	extends
+native	ke	native
+class	ke	class
+
+#################
+# Types
+#################
+boolean	ty	boolean
+Boolean	ty	boxed type boolean
+double	ty	double
+Double	ty	boxed type double
+byte	ty	byte
+Byte	ty	boxed type byte
+Integer	ty	boxed type integer
+short	ty	short
+Short	ty	boxed type short
+char	ty	char
+Char	ty	boxed type char
+long	ty	long
+Long	ty	boxed type long
+float	ty	float
+Float	ty	boxed type float
+enum	ty	enumerative
+
+
+##################################################
+# Messages: simple sentences not parameterizable
+##################################################
+disconnectingServer	me	disconnecting from eclipse
+welcomeMessage	me	You are connected with eclipse
+bookmarkDeleted	me	bookmark deleted successfully
+bookmarkCreated	me	bookmark created successfully
+notInAClass	me	you are not in a class body
+
+inspectionMode	me	inspection mode selected
+readMode	me	read mode selected
+overviewMode	me	overview mode selected
+symbolLevelAll	me	symbol level all selected
+symbolLevelSome	me	symbol level some selected
+
+level	me	level
+inResource	me	in resource
+commandExpand	me	expand the selection
+constructor	me	constructor
+mainMethod	me	main method
+projectNature	me	project nature
+focused	me	focused
+cursor	me	cursor
+startOfCodeBlock	me	start of code block
+endOfCodeBlock	me	end of code block
+noParameters	me	no parameters
+noInitializers	me	no initializers 
+noUpdaters	me	no updaters
+isEmpty	me	is empty
+condition	me	condition
+statement	me	statement
+statements	me	statements
+contains	me	contains
+conditions	me	conditions
+initializer	me	initializer
+initializers	me	initializers
+defaultKeyword	me	default
+noExpressions	me	no expressions
+readingStatePartial	me switched to partial reading
+readingStateComplete	me	switched to complete reading
+emptyLine	me	empty line
+readOnly	me	read only
+folder	me	folder
+project	me	project
+projects	me	projects
+package	me	package
+packages	me	packages
+file	me	file
+selected	me	selected
+collapsed	me	collapsed
+expanded	me	expanded
+expandable	me	expandable
+notexpanded	me	not expanded
+notexpandable	me	not expandable
+added	me	added
+removed	me	removed
+opened	me	opened
+closed	me	closed
+methods	me	methods
+field	me	field
+natureProject	me	The nature project is
+finallyClause	me	finally clause
+else	me	else
+noEditorSelected	me	No textual editor selected
+noStatementSelected	me	No statement selected
+noNextNodeFound	me	No next node found
+lineInDifferentEditor	me	Error: the two lines are in different editors.
+landmarksReset	me	Landmarks reset
+warningBottomUp	me	Warning: you selected lines starting from the lower one. At the moment a bottom-up selection won't work properly. You should select before the top line, then the lower.
+
+# generic
+of	me	of
+
+# View
+commandView	me	command line view
+packageExplorer	me	package explorer
+editorView	me	editor
+outline	me	outline
+console	me	console
+problemView	me	problem view
+codeInspector	me	code inspector
+
+#View focused
+codeInspectorFocused	me	code inspector focused
+commandViewFocused	me	command line view focused
+consoleFocused	me	console focused
+outlineFocused	me	outline focused
+packageExplorerFocused	me	package explorer focused
+problemViewFocused	me	problem view focused
+junitViewFocused	me	junit view focused
+
+# Navigation
+parentSelected	me	parent selected
+previousSelected	me	previous selected
+noNodeSelected	me	no node selected
+selectedNodeisntABlock	me	selected node isn't a block
+notYetImplemented	me	not yet implemented
+noParentNode	me	no parent node
+noPreviouslySelectedNode	me	no previously selected node
+tableSelected	me	table selected
+treeSelected	me	tree selected
+textSelected	me	text selected
+insertText	me	insert text
+isExpandable	me	is expandable
+
+
+# Errors and warnings
+packageNotFound	me	package not found
+classNotFound	me	class not found
+multipleClass	me	multiple class founded, reduce the selection
+noClass	me	no class with the name
+syntaxError	me	syntax error
+projectNotSelected	me	project not selected
+classNotSelected	me	class not selected
+methodNotFoundInClass	me	method not found in this class
+projectNotExist	me	project doesn't exist
+unknownJavaElement	me	unknown Java element
+noJavaElement	me	no Java Element
+noOpenedEditor	me	no opened editor
+areOpened	me	are opened
+invalidSelection	me	invalid selection
+noMethodsAvailable	me	no methods available
+wrongSelection	me	Wrong selection for this command
+juniterror	me	junit not found
+notExistingProject	me	not existing project into workspace
+statementNotFound	me	statement not exist in the method
+
+###############################
+# Sentence: parameterizable
+###############################
+forF	se	for {$ITER} from {$START} to {$COND} update {$UPDATE}
+forF	se	infinite for loop {$BLANK}
+forL	se	for {$ITER} from {$START} to {$END}
+forL	se	for {$ITER} from {$START} to {$END} update {$UPDATE}
+forP	se	iterator {$ITER}
+forP	se	condition {$COND}
+forP	se	start value {$START}
+forP	se	end value {$END}
+ForP	se	update expression {$UPDATE}
+
+forEachF	se	for iterate over {$COLLECTION} with iterator {$ITER} of type {$TYPE}
+forEachL	se	for each element in {$COLLECTION}
+
+whileF	se	while loop until {$COND}
+doF	se	do some action while {$COND}
+
+ifF	se	if {$COND} then do some statements
+ifF	se	if {$COND} then do {$STATEMENT} 
+elseF	se	else statement
+elseF	se	else do {$STATEMENT}
+ifElseF	se	if {$COND} then do some statement otherwise do something else
+ifElseF	se	if {$COND} then do {$STATEMENT} else do {$ELSESTMT}
+ifElseF	se	if {$COND} then do {$STATEMENT} else do some other statements
+ifElseF	se	if {$COND} then do some statements else do {$ELSESTMT}
+
+switchF	se	switch {$SELECTOR} between cases {$LIST}
+switchF	se	empty switch for {$SELECTOR}
+
+methodF	se	method {$NAME} is {$MOD} with no parameters and return type {$RETURN}
+methodF	se	method {$NAME} is {$MOD} with parameters {$PARAM} and return type {$RETURN}
+constructorF	se	{$MOD} constructor for {$NAME} with parameters {$PARAM}
+constructorF	se	{$MOD} constructor for {$NAME} with no parameters
+
+classF	se	class {$NAME} is {$STATUS}
+classF	se	class {$NAME} is {$MOD}
+classF	se	class {$NAME} is {$MOD} extends {$EXTEND}
+classF	se	class {$NAME} is {$MOD} implements {$IMPLEMENT}
+classF	se	class {$NAME} is {$MOD} extends {$EXTEND} and implements {$IMPLEMENT}
+commentblockF	se	comment block
+
+catchF	se	catch clause for {$EXCEPTION}
+tryCatchF	se	try block that catch {$EXCEPTION}
+tryCatchF	se	try block that catch {$NUMBER} elements {$EXCEPTION}
+tryCatchF	se	try block that catch {$EXCEPTION} with finally clause {$FINALLY} 
+tryCatchFinallyF	se	try block that catch {$NUMBER} elements {$EXCEPTION} and finally
+
+packageNotFoundF	se	package {$NAME} not found
+classNotFoundF	se	class {$NAME} not found
+synchronizeBlockF	se	synchronize block on {$COND}
+editorFocusedF	se	editor focused with {$NAME} opened
+interfaceF	se	interface {$NAME} is {$MOD}
+interfaceF	se	interface {$NAME} is {$MOD} extends {$EXTEND}
+enumF	se	enum {$NAME} is {$MOD}
+
+javaProjectF	se	Java Project {$NAME} is {$STATUS}
+javaProjectF	se	Java Project {$NAME} is {$STATUS} with {$NUMBER} children
+folderF	se	Folder {$NAME}
+folderF	se	Folder {$NAME} is {$STATUS}
+folderF	se	Folder {$NAME} is {$STATUS} with {$NUMBER} packages
+packageF	se	package {$NAME}
+packageF	se	Package {$NAME} is {$STATUS}
+packageF	se	Package {$NAME} is {$STATUS} with {$NUMBER} classes
+fieldF	se	field {$NAME} is {$MOD}
+fieldF	se	field {$NAME} is {$MOD} of type {$TYPE}
+
+simpleExpL	se	{$LEFTHAND} {$NUMBER} concatenate expression where the last is {$NAME} with parameters {$LIST}
+simpleExpL	se	{$LEFTHAND} {$NUMBER} concatenate expression where the last is {$NAME}
+
+fileF	se	file {$NAME} is {$STATUS}
+
+localizationF	se	in method {$METHOD}
+localizationF	se	in class {$CLASS}
+localizationF	se	in class {$CLASS} in package {$PACKAGE}
+localizationF	se	in method {$METHOD} in class {$CLASS}
+localizationF	se	in method {$METHOD} in class {$CLASS} in package {$PACKAGE}
+
+summaryF	se	{$STATEMENT}
+summaryF	se	{$STATEMENT} inside {$OUTSIDE}
+summaryF	se	you are {$LOCALIZATION} at {$STATEMENT}
+summaryF	se	you are {$LOCALIZATION} at {$STATEMENT} inside {$OUTSIDE}
+
+# general purpose
+selectedF	se	{$NAME} selected
+deletedF	se	{$NAME} deleted
+textSelectedF	se	{$NAME} selected
+textDeselectedF	se	{$NAME} deselected
+selectLineStatusF	se	select area start at position {$START}
+selectLineStatusF	se	no selected starting point {$BLANK}

@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import org.contextvox.plugin.ContextVox;
 import org.contextvox.plugin.VoxRequest;
+import org.contextvox.services.replacer.dictionnaries.Messages;
 import org.contextvox.utils.FeedbackFilter;
 import org.contextvox.utils.VoxLogFormatter;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -100,6 +101,8 @@ public class ContextVoxActivator extends AbstractUIPlugin {
 		handler.setLevel(Level.FINE);
 		handler.setFormatter(new VoxLogFormatter());
 		handler.setFilter(new FeedbackFilter());
+
+		Messages.load(Messages.DEFAULT_LANGUAGE);
 
 		new Thread(instance).start();
 	}

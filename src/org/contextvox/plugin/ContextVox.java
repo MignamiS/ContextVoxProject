@@ -1,8 +1,11 @@
 package org.contextvox.plugin;
 
+import java.util.EnumSet;
 import java.util.concurrent.LinkedBlockingQueue;
 
 import org.contextvox.services.ServiceLocator;
+import org.contextvox.services.replacer.MessageMaker;
+import org.contextvox.services.replacer.ReplacerOption;
 import org.contextvox.services.ttsengine.TTSService;
 
 /**
@@ -45,7 +48,9 @@ public class ContextVox implements Runnable, ServiceLocator {
 				break;
 
 			// TODO implement request process
-			getTTSService().readString("You pressed the menu item", MessageSource.GENERIC_READ);
+			final EnumSet<ReplacerOption> config = EnumSet.of(ReplacerOption.SYMBOL_ALL);
+			final String msg = MessageMaker.replaceSymbols("int a++:asd()", config);
+			getTTSService().readString(msg, MessageSource.GENERIC_READ);
 		}
 
 		// TODO implement main loop exit

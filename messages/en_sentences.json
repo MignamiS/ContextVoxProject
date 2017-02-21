@@ -1,0 +1,245 @@
+
+[
+    {
+        "type":"CATCH",
+        "FULL":[
+            "catch clause for {$EXCEPTION}"
+        ]
+    },
+    {
+        "type":"CLASS",
+        "FULL":[
+            "class {$NAME} is {$STATUS}",
+            "class {$NAME} is {$MOD}",
+            "class {$NAME} is {$MOD} extends {$EXTEND}",
+            "class {$NAME} is {$MOD} implements {$IMPLEMENT}",
+            "class {$NAME} is {$MOD} extends {$EXTEND} and implements {$IMPLEMENT}"
+        ]
+    },
+    {
+        "type":"CLASS_NOT_FOUND",
+        "FULL":[
+            "class {$NAME} not found"
+        ]
+    },
+    {
+        "type":"CONSTRUCTOR",
+        "FULL":[
+            "{$MOD} constructor for {$NAME} with parameters {$PARAM}",
+            "{$MOD} constructor for {$NAME} with no parameters"
+        ]
+    },
+    {
+        "type":"DELETED",
+        "FULL":[
+            "{$NAME} deleted"
+        ]
+    },
+    {
+        "type":"DO",
+        "FULL":[
+            "do some action while {$COND}"
+        ]
+    },
+    {
+        "type":"EDITOR_FOCUSED",
+        "FULL":[
+            "editor focused with {$NAME} opened"
+        ]
+    },
+    {
+        "type":"ELSE",
+        "FULL":[
+            "else statement",
+            "else do {$STATEMENT}"
+        ]
+    },
+    {
+        "type":"ENUM",
+        "FULL":[
+            "enum {$NAME} is {$MOD}"
+        ]
+    },
+    {
+        "type":"FIELD",
+        "FULL":[
+            "field {$NAME} is {$MOD}",
+            "field {$NAME} is {$MOD} of type {$TYPE}"
+        ]
+    },
+    {
+        "type":"FILE",
+        "FULL":[
+            "file {$NAME} is {$STATUS}"
+        ]
+    },
+    {
+        "type":"FOLDER",
+        "FULL":[
+            "Folder {$NAME}",
+            "Folder {$NAME} is {$STATUS}",
+            "Folder {$NAME} is {$STATUS} with {$NUMBER} packages"
+        ]
+    },
+    {
+        "type":"FOR",
+        "FULL":[
+            "for {$ITER} from {$START} to {$COND} update {$UPDATE}",
+            "infinite for loop {$BLANK}"
+        ],
+        "LIGHT":[
+            "for {$ITER} from {$START} to {$END}",
+            "for {$ITER} from {$START} to {$END} update {$UPDATE}"
+        ],
+        "PARTIAL":[
+            "iterator {$ITER}",
+            "condition {$COND}",
+            "start value {$START}",
+            "end value {$END}"
+        ]
+    },
+    {
+        "type":"FOREACH",
+        "FULL":[
+            "for iterate over {$COLLECTION} with iterator {$ITER} of type {$TYPE}"
+        ],
+        "LIGHT":[
+            "for each element in {$COLLECTION}"
+        ]
+    },
+    {
+        "type":"IF",
+        "FULL":[
+            "if {$COND} then do some statements",
+            "if {$COND} then do {$STATEMENT} "
+        ]
+    },
+    {
+        "type":"IFELSE",
+        "FULL":[
+            "if {$COND} then do some statement otherwise do something else",
+            "if {$COND} then do {$STATEMENT} else do {$ELSESTMT}",
+            "if {$COND} then do {$STATEMENT} else do some other statements",
+            "if {$COND} then do some statements else do {$ELSESTMT}"
+        ]
+    },
+    {
+        "type":"INTERFACE",
+        "FULL":[
+            "interface {$NAME} is {$MOD}",
+            "interface {$NAME} is {$MOD} extends {$EXTEND}"
+        ]
+    },
+    {
+        "type":"JAVAPROJECT",
+        "FULL":[
+            "Java Project {$NAME} is {$STATUS}",
+            "Java Project {$NAME} is {$STATUS} with {$NUMBER} children"
+        ]
+    },
+    {
+        "type":"LOCALIZATION",
+        "FULL":[
+            "in method {$METHOD}",
+            "in class {$CLASS}",
+            "in class {$CLASS} in package {$PACKAGE}",
+            "in method {$METHOD} in class {$CLASS}",
+            "in method {$METHOD} in class {$CLASS} in package {$PACKAGE}"
+        ]
+    },
+    {
+        "type":"METHOD",
+        "FULL":[
+            "method {$NAME} is {$MOD} with no parameters and return type {$RETURN}",
+            "method {$NAME} is {$MOD} with parameters {$PARAM} and return type {$RETURN}"
+        ]
+    },
+    {
+        "type":"PACKAGE",
+        "FULL":[
+            "package {$NAME}",
+            "Package {$NAME} is {$STATUS}",
+            "Package {$NAME} is {$STATUS} with {$NUMBER} classes"
+        ]
+    },
+    {
+        "type":"PACKAGE_NOT_FOUND",
+        "FULL":[
+            "package {$NAME} not found"
+        ]
+    },
+    {
+        "type":"SELECTED",
+        "FULL":[
+            "{$NAME} selected"
+        ]
+    },
+    {
+        "type":"SELECT_LINE_STATUS",
+        "FULL":[
+            "select area start at position {$START}",
+            "no selected starting point {$BLANK}"
+        ]
+    },
+    {
+        "type":"SIMPLE_EXPRESSION",
+        "LIGHT":[
+            "{$LEFTHAND} {$NUMBER} concatenate expression where the last is {$NAME} with parameters {$LIST}",
+            "{$LEFTHAND} {$NUMBER} concatenate expression where the last is {$NAME}"
+        ]
+    },
+    {
+        "type":"SUMMARY",
+        "FULL":[
+            "{$STATEMENT}",
+            "{$STATEMENT} inside {$OUTSIDE}",
+            "you are {$LOCALIZATION} at {$STATEMENT}",
+            "you are {$LOCALIZATION} at {$STATEMENT} inside {$OUTSIDE}"
+        ]
+    },
+    {
+        "type":"SWITCH",
+        "FULL":[
+            "switch {$SELECTOR} between cases {$LIST}",
+            "empty switch for {$SELECTOR}"
+        ]
+    },
+    {
+        "type":"SYNCHRONIZE_BLOCK",
+        "FULL":[
+            "synchronize block on {$COND}"
+        ]
+    },
+    {
+        "type":"TEXT_DESELECTED",
+        "FULL":[
+            "{$NAME} deselected"
+        ]
+    },
+    {
+        "type":"TEXT_SELECTED",
+        "FULL":[
+            "{$NAME} selected"
+        ]
+    },
+    {
+        "type":"TRY_CATCH",
+        "FULL":[
+            "try block that catch {$EXCEPTION}",
+            "try block that catch {$NUMBER} elements {$EXCEPTION}",
+            "try block that catch {$EXCEPTION} with finally clause {$FINALLY} "
+        ]
+    },
+    {
+        "type":"TRY_CATCH_FINALLY",
+        "FULL":[
+            "try block that catch {$NUMBER} elements {$EXCEPTION} and finally"
+        ]
+    },
+    {
+        "type":"WHILE",
+        "FULL":[
+            "while loop until {$COND}"
+        ]
+    }
+]
